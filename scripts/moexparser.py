@@ -58,7 +58,7 @@ def get_historical_data(ticker, start_date: str, end_date: str):
     # check whether ticker supplied is correct and trades in TQBR regime
     check_tqbr(ticker)
 
-    args = ((x, start_date, end_date) for x in tickers)
+    args = ((x, start_date, end_date) for x in ticker)
 
     if isinstance(ticker, list):
         out = reduce(lambda left, right: pd.merge(left, right, on=['TRADEDATE'], ),
